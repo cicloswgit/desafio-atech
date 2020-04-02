@@ -1,0 +1,12 @@
+## YAML Templatesss
+---
+default: --no-source --color --format pretty --format json --out=test_results/reports/report.html
+ns: --no-source
+pretty: --format pretty
+ci:  --format progress
+
+html:  --format html --out=test_results/reports/report.html
+json:  --format json --out=test_results/reports/report.json
+
+dev: env=dev
+hml: env=hml
