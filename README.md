@@ -49,4 +49,14 @@ env = prod
 nav = chrome/firefox
 ```
 
+---
 
+#### Results
+
+See results of tests running on test_results' folder.
+
+---
+
+#### Issues
+Please, contact me or report in this board if you find any issues:
+https://github.com/cicloswgit/desafio-atech/projects/1
