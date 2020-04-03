@@ -4,22 +4,30 @@ Dado("que visualizo os filtros disponíveis para busca de vôos") do
 end
 
 Dado("preencho o filtro Partida com a data {string}") do |partida|
-	@filtros.campos_data[0].set(partida)
-	@partida = partida
+	unless partida.eql?('')
+		@filtros.campos_data[0].set(partida)
+		@partida = partida
+	end	
 end
 
 Dado("preencho o filtro Chegada com a data {string}") do |chegada|
-	@filtros.campos_data[1].set(chegada)
-	@chegada = chegada
+	unless chegada.eql?('')
+		@filtros.campos_data[1].set(chegada)
+		@chegada = chegada
+	end
 end
 Dado("preencho o filtro Origem com o item {string}") do |origem|
-	@filtros.combos_locais[0].first(:option, origem).select_option
-	@origem = origem
+	unless origem.eql?('')
+		@filtros.combos_locais[0].first(:option, origem).select_option
+		@origem = origem
+	end
 end
 
 Dado("preencho o filtro Destino com o item {string}") do |destino|
-	@filtros.combos_locais[1].first(:option, destino).select_option
-	@destino = destino
+	unless destino.eql?('')
+		@filtros.combos_locais[1].first(:option, destino).select_option
+		@destino = destino
+	end	
 end
 
 Quando("submeto a busca") do
@@ -27,7 +35,7 @@ Quando("submeto a busca") do
 end
 
 Então("visualizo seu resultado com sucesso") do	
-	expect(@busca.resultado_busca.count).to be >= 1
+	expect(@busca.resultado_busca).not_to be_nil
 	@resultado = @busca.resultado_busca[0]
 end
 
@@ -47,5 +55,5 @@ end
 
 Então("ele não apresenta apenas os dados específicos à busca realizada") do
 	@resultado.wait_until_partida_visible
-	expect(@busca.resultado_busca.count).to be > 1
+	expect(@busca.resultado_busca.count).to be >= 1
 end

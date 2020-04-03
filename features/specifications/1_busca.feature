@@ -38,13 +38,14 @@ Esquema do Cenário: Validar Status dos vôos
 	|  partida	|  chegada	|		origem			|		destino		|	status		|
 	|15/04/2018	|16/04/2018	| São José dos Campos	|Nova Iorque		|	Confirmado	|
 	|4/1/2018	|4/2/2018	| Nova Iorque			|São José dos Campos|	Cancelado	|
-	|4/1/2018	|4/1/2018	| Tóquio				|Guarulhos			|	No ar		|
+	|4/1/2018	|4/2/2018	| Tóquio				|Guarulhos			|	No ar		|
 	|4/1/2018	|4/2/2018	| Nova Iorque			|Guarulhos			|	Atrasado	|
 	|15/04/2018	|16/04/2018	| Tóquio				|São José dos Campos|	Pousou		|
 
 @negativo	@buscar_em_branco
 Esquema do Cenário: Buscar vôos informando filtros em branco
-	Dado preencho o filtro Partida com a data "<partida>"
+	Dado que visualizo os filtros disponíveis para busca de vôos
+		E preencho o filtro Partida com a data "<partida>"
 		E preencho o filtro Chegada com a data "<chegada>"
 		E preencho o filtro Origem com o item "<origem>"
 		E preencho o filtro Destino com o item "<destino>"
@@ -59,7 +60,7 @@ Esquema do Cenário: Buscar vôos informando filtros em branco
 	|			|16/04/2018	| 				|					|
 	|			|			| 	Guarulhos	|					|
 	|			|			| 				|Nova Iorque		|
-	|01/04/2018	|02/04/2018	| Nova Iorque	|					|
-	|01/04/2018	|01/04/2018	| 				|Guarulhos			|
-	|01/04/2018	|			| Nova Iorque	|Guarulhos			|
+	|4/1/2018	|4/2/2018	| Nova Iorque	|					|
+	|4/1/2018	|4/2/2018	| 				|Guarulhos			|
+	|4/1/2018	|			| Nova Iorque	|Guarulhos			|
 	|			|16/04/2018	| Tóquio		|São José dos Campos|
