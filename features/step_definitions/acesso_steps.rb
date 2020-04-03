@@ -4,6 +4,7 @@ Dado("que acesso o site Atech Airlines") do
 end
 
 Então("visualizo sua tela Home") do
+  @home.esperar_titulo
   expect(@home.titulo.visible?).to be_truthy
   expect(@home.titulo.text).to eq('Atech Airlines')
 end
