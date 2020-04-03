@@ -16,10 +16,10 @@ Contexto: Acesso ao Site
 @positivo	@buscar_sucesso
 Cenário: Buscar vôos com sucesso
 	Dado que visualizo os filtros disponíveis para busca de vôos 
-		E preencho o filtro Partida com a data "01/04/2018"
-		E preencho o filtro Chegada com a data "02/04/2018"
+		E preencho o filtro Partida com a data "15/04/2018"
+		E preencho o filtro Chegada com a data "16/04/2018"
 		E preencho o filtro Origem com o item "São José dos Campos"
-		E preencho o filtro Destino com o item "Tóquio"
+		E preencho o filtro Destino com o item "Nova Iorque"
 	Quando submeto a busca	
 	Então visualizo seu resultado com sucesso
 	E ele apresenta os dados específicos à busca realizada
@@ -37,9 +37,9 @@ Esquema do Cenário: Validar Status dos vôos
 	Exemplos:
 	|  partida	|  chegada	|		origem			|		destino		|	status		|
 	|15/04/2018	|16/04/2018	| São José dos Campos	|Nova Iorque		|	Confirmado	|
-	|01/04/2018	|02/04/2018	| Nova Iorque			|São José dos Campos|	Cancelado	|
-	|01/04/2018	|01/04/2018	| Tóquio				|Guarulhos			|	No ar		|
-	|01/04/2018	|02/04/2018	| Nova Iorque			|Guarulhos			|	Atrasado	|
+	|4/1/2018	|4/2/2018	| Nova Iorque			|São José dos Campos|	Cancelado	|
+	|4/1/2018	|4/1/2018	| Tóquio				|Guarulhos			|	No ar		|
+	|4/1/2018	|4/2/2018	| Nova Iorque			|Guarulhos			|	Atrasado	|
 	|15/04/2018	|16/04/2018	| Tóquio				|São José dos Campos|	Pousou		|
 
 @negativo	@buscar_em_branco
