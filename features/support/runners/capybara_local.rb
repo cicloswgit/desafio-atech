@@ -10,7 +10,6 @@ class CapybaraLocal
         Capybara::Selenium::Driver.new(app, browser: :chrome)
       end
     end
-    #TODO - headless - javascript 
     Capybara.default_driver = :selenium
     Capybara.javascript_driver = :selenium
     Capybara.default_max_wait_time = 50
