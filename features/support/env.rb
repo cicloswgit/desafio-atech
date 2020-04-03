@@ -4,7 +4,7 @@ require 'selenium-webdriver'
 require 'webdrivers'
 require 'rspec/expectations'
 require 'site_prism'
-require 'allure-cucumber'
+require 'report_builder'
 require 'rubocop'
 require 'byebug'
 

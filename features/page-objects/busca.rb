@@ -1,13 +1,13 @@
-class Busca < SitePrism::Section
-  element  :titulo, 'div.jumbotron h1'
-  #element  :campo_descricao, 'input[name="q"]'
-  #element  :icone_lupa, 'button.search-input-icon'
-  section  :filtros, Filtros, 'css'
+require_relative 'filtros.rb'
+require_relative 'resultado_busca.rb'
 
-  def preencher_descricao(texto)
-    #wait_until_titulo_visible
-    #campo_descricao.set(texto)
-    #icone_lupa.click
-    #$descricao = texto
+class Busca < SitePrism::Page
+  element :titulo, 'div.jumbotron h1'
+  section :filtros, Filtros, 'div[ng-include="\'partials/flight-filters.html\'"]'
+  element :botao_filtrar, 'button.btn'
+  sections :resultado_busca, ResultadoBusca, 'table.table tbody tr'
+
+  def esperar_titulo
+    wait_until_titulo_visible
   end
 end
